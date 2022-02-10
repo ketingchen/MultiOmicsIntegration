@@ -4,6 +4,7 @@
 # UUp
 # higher lamda --> higher penalty
 sPLS=function(X, Y, lv=1, max.iter=500, tol=1e-06, lamda1=0, lamda2=0, scale=T, verbose=T, quality.check=T){
+  ### Data cleaning
   X=as.matrix(X)
   Y=as.matrix(Y)
   lv=min(c(lv, ncol(Y)))
@@ -26,6 +27,7 @@ sPLS=function(X, Y, lv=1, max.iter=500, tol=1e-06, lamda1=0, lamda2=0, scale=T, 
     Y=Y[, keep.y, drop=F]
   }
   
+  ### Data transformation
   if(verbose) cat("Scale X and Y variables...","\n")
   Xs=scale(X, center=T, scale=scale)
   Ys=scale(Y, center=T, scale=scale)
