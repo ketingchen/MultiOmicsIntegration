@@ -19,7 +19,10 @@ This instruction only focuses on generating the co-expression clusters and query
 Random forest regression is next constructed to query the association between co-expression gene clusters and single-value metabolome compositions.<br>
 
 ##### 3.1. Generate the eigenvalue for each co-expressed gene cluster. Use DataToBlocks.R as demonstrated below:
-                     1. 
+      clusters <- read.csv("wgcna_cluster_membership_method_A.csv", row.names=1)
+      cls <- as.numeric(cls[,"Gene_Cluster"])
+      names(cls) <- rownames(clusters)
+      if(sum(cls==0)==0) cls[cls==max(cls)] <- 0
                      
   
       
