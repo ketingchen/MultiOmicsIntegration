@@ -29,6 +29,21 @@ Random forest regression is next constructed to query the association between co
       fpkm_new <- DataToBlocks(X=fpkm, cluster=cls)$Xnew
 
 ##### 3.2. (optional) Please use this step to find the optimal tuning parameters for lasso penalty. use tuneBPRF.R as demonstrated below:
+     #!/bin/bash
+     #SBATCH --nodes=1 
+     #SBATCH --cpus-per-task=32 
+     #SBATCH --mem=256G 
+     #SBATCH --time=2-02:30:02 
+     #SBATCH --partition=biocrunch
+     #SBATCH --job-name="tuneECW" 
+     #SBATCH --constraint=AVX2
+
+     module load r/3.6.0-py2-fupx2uq
+     module load r-randomforest/4.6-12-py2-r3.4-2biqljo
+     module load r-doparallel/1.0.11-py2-r3.4-tzdczfv
+
+     cd /work/LAS/myn-lab/Rupam/BlockPC.RF
+     Rscript /work/LAS/myn-lab/KChen/BlockPC.RF/TuneBPRF.R -xfpkm_for_cls.csv -y../resp_tsne_rseq.csv -mwgcna_cluster_membership_method_A.csv -c2 -k4 -r3 -otune_Blk_tsne_ecw -nt32
                      
   
       
