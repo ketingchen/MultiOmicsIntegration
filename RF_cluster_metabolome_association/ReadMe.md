@@ -45,7 +45,23 @@ Random forest regression is next constructed to query the association between co
      cd /work/LAS/myn-lab/Rupam/BlockPC.RF
      Rscript /work/LAS/myn-lab/KChen/BlockPC.RF/TuneBPRF.R -xfpkm_for_cls.csv -y../resp_tsne_rseq.csv -mwgcna_cluster_membership_method_A.csv -c2 -k4 -r3 -otune_Blk_tsne_ecw -nt32
                      
-##### 3.3. Query the association between metabolome compositions and co-expressed gene clusters. Use RunBPRF.R as demonstrated below:
+##### 3.3. Query the association between metabolome compositions and co-expressed gene clusters. Use RunBPRF.R as demonstrated below (the sample dataset for the response variables is available at: /lss/research/myn-lab/Rupam/resp_tsne_rseq.csv). The example script does NOT include lasso penalty within each co-expressed cluster.
+     #!/bin/bash
+     #SBATCH --nodes=1 
+     #SBATCH --cpus-per-task=32 
+     #SBATCH --mem=256G 
+     #SBATCH --time=2-02:30:02 
+     #SBATCH --partition=biocrunch
+     #SBATCH --job-name="tuneECW" 
+     #SBATCH --constraint=AVX2
+
+     module load r/3.6.0-py2-fupx2uq
+     module load r-randomforest/4.6-12-py2-r3.4-2biqljo
+     module load r-doparallel/1.0.11-py2-r3.4-tzdczfv
+
+     cd /work/LAS/myn-lab/Rupam/BlockPC.RF
+     Rscript /work/LAS/myn-lab/KChen/BlockPC.RF/TuneBPRF.R -xfpkm_for_cls.csv -y../resp_tsne_rseq.csv -mwgcna_cluster_membership_method_A.csv -c2 -k4 -r3 -otune_Blk_tsne_ecw -nt32
+
     
       
 
