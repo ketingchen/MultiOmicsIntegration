@@ -1,5 +1,4 @@
 #### Instructions for querying the association between metabolome compositions and gene co-expression clusters using a combined approach of WGCNA and random forest
-<br>
 
 ##### Input files needed:
 1. a single column file that represent the composition of the entire metabolome using a single column of values, e.g., tSNE, first principal component, etc.<br>
