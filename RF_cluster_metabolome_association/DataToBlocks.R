@@ -1,4 +1,4 @@
-
+source("sPCA.R")
 DataToBlocks=function(X, cluster=rep(1, ncol(X)), lamda=rep(0, max(cluster)), lv=1){
   cluster.size=max(cluster)
   X0=NULL;if(0 %in% cluster) X0=X[,cluster==0,drop=F]
