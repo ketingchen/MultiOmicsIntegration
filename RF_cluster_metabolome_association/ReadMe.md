@@ -18,11 +18,17 @@ This instruction only focuses on generating the co-expression clusters and query
 ### 3. Random forest
 Random forest regression is next constructed to query the association between co-expression gene clusters and single-value metabolome compositions.<br>
 
-##### 3.1. Generate the eigenvalue for each co-expressed gene cluster. Use DataToBlocks.R as demonstrated below:
+#### steps 3.1. and 3.2 are optional. Please use these two steps if you want to incorporate a lasso penality within each co-expressed clusters
+##### 3.1. (optional) Generate the eigenvalue for each co-expressed gene cluster. Use DataToBlocks.R as demonstrated below (the sample dataset is available at: /lss/research/myn-lab/Rupam/BlockPC.RF/fpkm_for_cls.csv
       clusters <- read.csv("wgcna_cluster_membership_method_A.csv", row.names=1)
       cls <- as.numeric(cls[,"Gene_Cluster"])
       names(cls) <- rownames(clusters)
       if(sum(cls==0)==0) cls[cls==max(cls)] <- 0
+      source("DataToBlocks.R")
+      fpkm <- read.csv("fpkm_for_cls.csv", header=T, stringAsFactors=F, row.names=1)
+      fpkm_new <- DataToBlocks(X=fpkm, cluster=cls)$Xnew
+
+##### 3.2. (optional) Please use this step to find the optimal tuning parameters for lasso penalty. use tuneBPRF.R as demonstrated below:
                      
   
       
