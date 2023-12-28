@@ -45,6 +45,7 @@ Random forest regression is next constructed to query the association between co
      cd /work/LAS/myn-lab/Rupam/BlockPC.RF
      Rscript /work/LAS/myn-lab/KChen/BlockPC.RF/TuneBPRF.R -xfpkm_for_cls.csv -y../resp_tsne_rseq.csv -mwgcna_cluster_membership_method_A.csv -c2 -k4 -r3 -otune_Blk_tsne_ecw -nt32
                      
-  
+##### 3.3. Query the association between metabolome compositions and co-expressed gene clusters. Use RunBPRF.R as demonstrated below:
+    
       
 
