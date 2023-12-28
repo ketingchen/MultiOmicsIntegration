@@ -14,3 +14,8 @@ This instruction only focuses on generating the co-expression clusters and query
 2.3. WGCNA to generate co-expressed gene clusters. Please use R script "wgcna_methodA.R". The dataset used in thisscript (i.e., sample dataset) is available at /lss/research/myn-lab/Rupam/WGCNA/fpkm_clean_for_wgcna.csv <br>
  <br>
 2.4. The output file to be used in the next step is "wgcna_cluster_membership_method_A.csv". This file is generated based on the sample dataset, and is available at /lss/research/myn-lab/Rupam/WGCNA/wgcna_cluster_membership_method_A.csv <br>
+
+### 3. Random forest
+Random forest regression is next constructed to query the association between co-expression gene clusters and single-value metabolome compositions.<br>
+<br>
+
