@@ -17,5 +17,10 @@ This instruction only focuses on generating the co-expression clusters and query
 
 ### 3. Random forest
 Random forest regression is next constructed to query the association between co-expression gene clusters and single-value metabolome compositions.<br>
-<br>
+
+##### 3.1. Generate the eigenvalue for each co-expressed gene cluster. Use DataToBlocks.R as demonstrated below:
+                     1. 
+                     
+  
+      
 
