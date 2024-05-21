@@ -60,7 +60,7 @@ Random forest regression is next constructed to query the association between co
      module load r-doparallel/1.0.11-py2-r3.4-tzdczfv
 
      cd /work/LAS/myn-lab/Rupam/BlockPC.RF
-     Rscript /work/LAS/myn-lab/KChen/BlockPC.RF/TuneBPRF.R -xfpkm_for_cls.csv -y../resp_tsne_rseq.csv -mwgcna_cluster_membership_method_A.csv -c2 -k4 -r3 -otune_Blk_tsne_ecw -nt32
+     Rscript /work/LAS/myn-lab/KChen/BlockPC.RF/RunBPRF.R -xfpkm_for_cls.csv -y../resp_tsne_rseq.csv -b10000 -mwgcna_cluster_membership_method_A.csv -c1 -oresult_BPRF_cutin -rreport_BPRF_cutin -nt32
 
     
       
